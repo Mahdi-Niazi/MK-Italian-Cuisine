@@ -7,7 +7,6 @@ const menuList = document.querySelector('.lists');
 
 const displayLists = async () => {
   const menu = await fetchData();
-  console.log(menu)
   menuList.innerHTML = '';
   menu.forEach((data,index) => {
     if(index <= 18 && index > 9)
@@ -33,4 +32,8 @@ const displayLists = async () => {
 
 displayLists();
 
+const closeBtn = document.querySelector('.fa-xmark');
+const modal = document.querySelector('.modal');
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';});
 
