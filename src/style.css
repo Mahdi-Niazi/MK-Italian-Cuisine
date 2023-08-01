@@ -86,3 +86,14 @@ button:hover {
 .name-con {
   margin-top: 2em;
 }
+.container-footer{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+.txt{
+  padding-top: 24px;
+  color: white;
+}
