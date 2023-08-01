@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Ribeye&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-family: 'Ribeye', cursive;
+  margin-bottom: 0.2em;
+  font-size: 5em;
+  color: aliceblue;
+  -moz-text-shadow: 7px 3px 5px rgba(0, 0, 0, 0.8);
+  -webkit-text-shadow: 7px 3px 5px rgba(0, 0, 0, 0.8);
+  -ms-text-shadow: 7px 3px 5px rgba(0, 0, 0, 0.8);
+  text-shadow: 7px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.list-form-container,
+.recent-score {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recent-score h2 {
+  margin-right: 0.5em;
+}
+
+.list-form-container {
+  align-items: flex-start;
+}
+
+form#add-new {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.5em;
+  padding: 0.5em;
+}
+
+.listdiv {
+  margin-right: 4em;
+  padding: 0.5em;
+}
+
+button {
+  padding: 0.25em 0.5em;
+  box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.75);
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  border: none;
+  background-color: #f0f8ffb3;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: aqua;
+}
+
+.lists {
+  margin-top: 1em;
+  -moz-box-shadow: 11px 15px 18px -3px rgba(140, 135, 140, 0.8);
+  -webkit-box-shadow: 11px 15px 18px -3px rgba(140, 135, 140, 0.8);
+  -ms-box-shadow: 11px 15px 18px -3px rgba(140, 135, 140, 0.8);
+  box-shadow: 11px 15px 18px -3px rgba(140, 135, 140, 0.8);
+}
+
+.lists li {
+  padding: 0.25em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(240, 248, 255, 0.514);
+}
+
+.lists li:nth-child(odd) {
+  background-color: rgba(109, 107, 107, 0.425);
+}
+
+input {
+  padding: 0.25em 0.5em;
+  font-size: 1em;
+  border: none;
+  background-color: #f0f8ffb3;
+  border-radius: 3px;
+}
+
+.list-name {
+  font-weight: bolder;
+}
