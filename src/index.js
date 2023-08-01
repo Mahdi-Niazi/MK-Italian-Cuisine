@@ -1,6 +1,7 @@
 import './style.css';
 import { fetchData } from './module/addScore.js';
-import mklogo from './assets/mklogoyellow.svg'
+import mklogo from './assets/mklogoyellow.svg';
+import background from './assets/background.jpg'
 
 const menuList = document.querySelector('.lists');
 
@@ -16,8 +17,8 @@ const displayLists = async () => {
         <div class="name-con">
             <span class="menu-name">${data.strMeal}</span>
             <div class="like-con">
-                <i class="fa-light fa-heart"></i>
-                <span class="likes">5 likes</span>
+              <i class="fa-regular fa-heart"></i>
+              <span class="likes">5 likes</span>
             </div>
         </div>
     </li>`;
