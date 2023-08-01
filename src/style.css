@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Ribeye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Suez+One&display=swap');
 
 * {
   padding: 0;
@@ -17,13 +17,35 @@ img {
 }
 
 .lists li img {
-  width: 250px;
+  width: 100%;
   border-radius: 10px;
 }
 
 header {
   background-color: black;
   color: white;
+  position: relative;
+}
+
+.heading h1 {
+  font-family: 'Suez One', serif;
+  display: flex;
+  flex-direction: column;
+  font-size: 6em;
+}
+
+.heading {
+  position: absolute;
+  z-index: 1;
+  top: 20%;
+  color: white;
+  right: 20%;
+}
+
+.button {
+  font-size: 2em;
+  border-radius: 20px;
+  margin-top: 1.5em;
 }
 
 ul.nav-menu {
@@ -44,8 +66,8 @@ button {
   -webkit-box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.75);
   font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  font-size: 1em;
+  font-weight: 700;
+  font-size: 1.25em;
   border: none;
   background-color: #f4ce15;
   border-radius: 10px;
@@ -53,7 +75,17 @@ button {
 }
 
 button:hover {
-  background-color: aqua;
+  background-color: white;
+}
+
+.menu-name {
+  font-weight: 500;
+}
+
+.button-con {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .lists {
@@ -64,19 +96,21 @@ button:hover {
   box-shadow: 11px 15px 18px -3px rgba(140, 135, 140, 0.8);
   display: flex;
   flex-wrap: wrap;
-  padding: 1em 10%;
+  padding: 2em 10%;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  gap: 1.5em;
 }
 
 .lists li {
-  padding: 1em 0.75em;
+  width: 400px;
+  padding: 1.5em 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #f5f5f5;
   border-radius: 10px;
+  box-shadow: 4px 5px 5px 0 rgba(44, 44, 44, 0.644);
 }
 
 .list-name {
@@ -84,5 +118,18 @@ button:hover {
 }
 
 .name-con {
-  margin-top: 2em;
+  margin-top: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

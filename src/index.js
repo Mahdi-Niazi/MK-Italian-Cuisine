@@ -21,8 +21,13 @@ const displayLists = async () => {
               <span class="likes">5 likes</span>
             </div>
         </div>
+        <div class="button-con">
         <button type="button" class="addComment">Comment</button>
+        <button type="button" class="addReservation">Reservation</button>
+        </div>
     </li>`;
+
+    
   });
 };
 
