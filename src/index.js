@@ -1,11 +1,12 @@
-import './style.css';
-import { fetchData } from './module/addScore.js';
+import "./style.css";
+import { fetchData } from "./module/addScore.js";
+import "./module/involvementApi.js";
 
-const menuList = document.querySelector('.lists');
+const menuList = document.querySelector(".lists");
 
 const displayLists = async () => {
   const menu = await fetchData();
-  menuList.innerHTML = '';
+  menuList.innerHTML = "";
   menu.forEach((data, index) => {
     if (index <= 18 && index > 9) {
       menuList.innerHTML += `
