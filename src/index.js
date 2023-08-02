@@ -42,6 +42,7 @@ const displayLists = async () => {
       button.addEventListener('click', (event) => {
         const listItem = event.target.closest('li');
         const dataId = listItem.getAttribute('dataId');
+        alert(dataId);
         showModal(dataId);
       });
     });
