@@ -8,12 +8,20 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  position: relative;
+}
+
 img {
   max-width: 100%;
 }
 
 .logo img {
   width: 40px;
+}
+
+.menuDescription img {
+  border-radius: 20px;
 }
 
 .lists li img {
@@ -60,6 +68,7 @@ nav {
   padding: 1em 10%;
 }
 
+.buttondesc,
 button {
   padding: 0.25em 0.5em;
   box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.75);
@@ -72,10 +81,17 @@ button {
   background-color: #f4ce15;
   border-radius: 10px;
   cursor: pointer;
+  width: fit-content;
 }
 
+.buttondesc:hover,
 button:hover {
   background-color: white;
+}
+
+a.buttondesc {
+  color: black;
+  text-decoration: none;
 }
 
 .menu-name {
@@ -103,7 +119,7 @@ button:hover {
 }
 
 .lists li {
-  width: 400px;
+  width: 370px;
   padding: 1.5em 1em;
   display: flex;
   flex-direction: column;
@@ -145,4 +161,127 @@ footer {
 .txt {
   padding-top: 30px;
   color: white;
+}
+
+.fa-heart {
+  color: red;
+  font-size: 1.25em;
+  cursor: pointer;
+}
+
+.modal {
+  height: 100%;
+  width: 100%;
+  padding: 2em 3em;
+  background-color: rgba(0, 0, 0, 0.683);
+  backdrop-filter: blur(0.1rem);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  overflow: auto;
+  display: none;
+}
+
+.desc-con {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 4.5em;
+  row-gap: 1em;
+  margin-top: 1.5em;
+}
+
+.desc-con span {
+  font-size: 1.25em;
+  font-weight: 500;
+}
+
+.modal-container {
+  width: 100%;
+  padding: 2.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.fa-xmark {
+  position: absolute;
+  font-size: 2em;
+  font-weight: 700;
+  top: 1em;
+  right: 1em;
+}
+
+.menuName {
+  margin-top: 0.5em;
+}
+
+.ing-con {
+  margin-top: 1em;
+}
+
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  list-style: disc;
+  margin-top: 0.75em;
+  gap: 1em;
+  font-style: italic;
+}
+
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 1.5em;
+}
+
+.comments {
+  list-style: none;
+  margin-top: 0.5em;
+}
+
+.comments li {
+  display: flex;
+  gap: 1em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5em;
+}
+
+.form h3 {
+  margin-bottom: 0.5em;
+}
+
+.nameInput {
+  font-weight: 400;
+  font-size: 15px;
+  padding: 15px 16px;
+  border: none;
+  border-bottom: 1px solid gray;
+  width: 70%;
+}
+
+#messageInput {
+  padding: 12px;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 15px;
+  width: 70%;
+  height: 114px;
+  background-color: rgba(179, 177, 177, 0.418);
+  border: none;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
