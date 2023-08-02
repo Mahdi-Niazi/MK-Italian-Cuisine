@@ -1,4 +1,5 @@
 const apiUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=italian';
+const apiwithID = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
 
 const addScore = async (scoreList) => {
   const response = await fetch(apiUrl, {
@@ -13,8 +14,13 @@ const addScore = async (scoreList) => {
 const fetchData = async () => {
   const response = await fetch(apiUrl);
   const data = await response.json();
-  console.log(data.meals)
   return data.meals;
 };
 
-export { addScore, fetchData };
+const fetchDataId = async (dataId) => {
+  const response = await fetch(`${apiwithID}${dataId}`);
+  const data = await response.json();
+  return data.meals;
+};
+
+export { addScore, fetchData, fetchDataId };
