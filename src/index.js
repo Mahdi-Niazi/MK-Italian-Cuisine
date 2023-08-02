@@ -2,6 +2,7 @@ import './style.css';
 import { fetchData, fetchDataId } from './module/addScore.js';
 import showModal from './module/showModal.js';
 
+
 const menuList = document.querySelector('.lists');
 
 const displayLists = async () => {
@@ -10,7 +11,9 @@ const displayLists = async () => {
   menu.forEach((data, index) => {
     if (index <= 18 && index > 9) {
       menuList.innerHTML += `
+
         <li dataId='${data.idMeal}'>
+
         <img src="${data.strMealThumb}" alt="${data.strMeal}">
         <div class="name-con">
             <span class="menu-name">${data.strMeal}</span>
