@@ -1,9 +1,7 @@
 import './style.css';
-
-import { fetchData } from './module/addScore.js';
 import { postLike } from './module/involvementApi.js';
-import { fetchData, fetchDataId } from "./module/addScore.js";
-import showModal from "./module/showModal.js";
+import { fetchData } from './module/addScore.js';
+
 const menuList = document.querySelector('.lists');
 
 const displayLists = async () => {
@@ -35,25 +33,6 @@ const displayLists = async () => {
         const dataId = listItem.getAttribute('dataId');
 
         postLike(dataId);
-      });
-    });
-     const addCommentBtns = document.querySelectorAll('.addComment');
- 
-    addCommentBtns.forEach((button) => {
-
-      button.addEventListener("click", (event) => {
-        const listItem = event.target.closest("li");
-        const dataId = listItem.getAttribute("dataId");
-        fetchDataId(dataId);
-      });
-    });
-    const addCommentBtns = document.querySelectorAll('.addComment');
-    addCommentBtns.forEach((button) => {
-      button.addEventListener('click', (event) => {
-        const listItem = event.target.closest('li');
-        const dataId = listItem.getAttribute('dataId');
-
-        showModal(dataId);
       });
     });
   });
