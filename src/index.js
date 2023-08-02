@@ -1,6 +1,9 @@
 import './style.css';
 import { fetchData } from './module/addScore.js';
 import { postLike } from './module/involvementApi.js';
+import { fetchData, fetchDataId } from "./module/addScore.js";
+
+import showModal from "./module/showModal.js";
 
 const menuList = document.querySelector('.lists');
 
@@ -10,7 +13,7 @@ const displayLists = async () => {
   menu.forEach((data, index) => {
     if (index <= 18 && index > 9) {
       menuList.innerHTML += `
-         <li dataId='${data.idMeal}'>
+         <li>
         <img src="${data.strMealThumb}" alt="${data.strMeal}">
         <div class="name-con">
             <span class="menu-name">${data.strMeal}</span>
@@ -32,6 +35,16 @@ const displayLists = async () => {
         const listItem = event.target.closest('li');
         const dataId = listItem.getAttribute('dataId');
         postLike(dataId);
+      });
+    });
+     const addCommentBtns = document.querySelectorAll('.addComment');
+ 
+    addCommentBtns.forEach((button) => {
+
+      button.addEventListener("click", (event) => {
+        const listItem = event.target.closest("li");
+        const dataId = listItem.getAttribute("dataId");
+        showModal(dataId);
       });
     });
   });
