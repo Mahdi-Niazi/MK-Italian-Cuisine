@@ -2,7 +2,6 @@ import './style.css';
 import { fetchData, fetchDataId } from './module/addScore.js';
 import showModal from './module/showModal.js';
 
-
 const menuList = document.querySelector('.lists');
 
 const displayLists = async () => {
