@@ -1,28 +1,29 @@
 const appId = 'hEgDPv2bsJBfvDJZuzrn';
 const apiUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/`;
 
-const addLikes = async (likes) => {
+const addLikes = async (like) => {
   const response = await fetch(`${apiUrl}likes/`, {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
-    body: JSON.stringify(likes),
+    body: JSON.stringify(like),
   });
-  const data = await response.json();
+  const data = await response.text();
   return data;
 };
 
 const fetchLikes = async () => {
   const response = await fetch(`${apiUrl}likes/`);
-  const data = await response.json();
-  return data;
+  const data = await response.text();
+  const parsedata = JSON.parse(data);
+  return parsedata;
 };
 
-const updateLikes = async () => {
+const updateLikes = async (mealId) => {
   const likeData = await fetchLikes();
-  likeData.forEach((element) => {
-    const spanLike = document.querySelector('.likes');
-    spanLike.textContent = `${element.likes} likes`;
-  });
+  const likes = likeData.find((like) => like.item_id === mealId);
+  return likes.likes;
 };
 
-export { addLikes, fetchLikes, updateLikes };
+export {
+  addLikes, fetchLikes, updateLikes, apiUrl, appId,
+};
