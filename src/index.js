@@ -1,18 +1,18 @@
-import "./style.css";
-import { fetchData } from "./module/addScore.js";
-import showModal from "./module/showModal.js";
-import { fetchLikes, addLikes, updateLikes } from "./module/addLikes.js";
-import mealCounter from "./module/mealcounter.js";
+import './style.css';
+import { fetchData } from './module/addScore.js';
+import showModal from './module/showModal.js';
+import { fetchLikes, addLikes, updateLikes } from './module/addLikes.js';
+import mealCounter from './module/mealcounter.js';
 
-const menuList = document.querySelector(".lists");
+const menuList = document.querySelector('.lists');
 
-const menuItem = document.getElementById("menu-count");
+const menuItem = document.getElementById('menu-count');
 
 const displayLists = async () => {
   const menu = await fetchData();
   const likes = await fetchLikes();
 
-  menuList.innerHTML = "";
+  menuList.innerHTML = '';
 
   const combined = [];
   for (let i = 0; i < menu.length; i += 1) {
@@ -47,13 +47,13 @@ const displayLists = async () => {
     </li>`;
     }
     menuItem.textContent = `(${mealCounter()})`;
-    const heartIcons = document.querySelectorAll(".fa-heart");
+    const heartIcons = document.querySelectorAll('.fa-heart');
 
     heartIcons.forEach((heartIcon) => {
-      heartIcon.addEventListener("click", async (event) => {
-        heartIcon.classList.replace("fa-regular", "fa-solid");
-        const listItem = event.target.closest("li");
-        const dataId = listItem.getAttribute("dataId");
+      heartIcon.addEventListener('click', async (event) => {
+        heartIcon.classList.replace('fa-regular', 'fa-solid');
+        const listItem = event.target.closest('li');
+        const dataId = listItem.getAttribute('dataId');
         const likes = await updateLikes(dataId);
         const like = {
           likes: likes + 1,
@@ -64,11 +64,11 @@ const displayLists = async () => {
       });
     });
 
-    const addCommentBtns = document.querySelectorAll(".addComment");
+    const addCommentBtns = document.querySelectorAll('.addComment');
     addCommentBtns.forEach((button) => {
-      button.addEventListener("click", (event) => {
-        const listItem = event.target.closest("li");
-        const dataId = listItem.getAttribute("dataId");
+      button.addEventListener('click', (event) => {
+        const listItem = event.target.closest('li');
+        const dataId = listItem.getAttribute('dataId');
         showModal(dataId);
       });
     });
@@ -77,8 +77,8 @@ const displayLists = async () => {
 
 displayLists();
 
-const closeBtn = document.querySelector(".fa-xmark");
-const modal = document.querySelector(".modal");
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
+const closeBtn = document.querySelector('.fa-xmark');
+const modal = document.querySelector('.modal');
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
 });

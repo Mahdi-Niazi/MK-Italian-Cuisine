@@ -1,5 +1,6 @@
 import { fetchDataId } from './addScore.js';
 import { addComment, fetchComment } from './comment.js';
+import commentCounter from './commentCounter.js';
 
 const showModal = async (dataId) => {
   const mealData = await fetchDataId(dataId);
@@ -19,13 +20,13 @@ const showModal = async (dataId) => {
   if (commentCount.error) {
     document.querySelector('.comment-heading').textContent = 'No comments available';
   } else {
-    document.querySelector('.comment-heading').textContent = `Comments (${commentCount.length})`;
     commentCount.forEach((element) => {
       commentList.innerHTML += `
           <li><span class="comment">${element.creation_date} <b>${element.username}:</b> ${element.comment}</span></li>`;
     });
   }
 
+  document.querySelector('.comment-heading').innerHTML = `Comments (${commentCounter()})`;
   const form = document.querySelector('.form');
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
