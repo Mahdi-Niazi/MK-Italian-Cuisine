@@ -2,7 +2,6 @@ import './style.css';
 import { fetchData } from './module/addScore.js';
 import showModal from './module/showModal.js';
 import { fetchLikes, addLikes, updateLikes } from './module/addLikes.js';
-import './module/itemCounter.js';
 
 const menuList = document.querySelector('.lists');
 
