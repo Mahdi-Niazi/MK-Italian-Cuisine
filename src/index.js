@@ -3,9 +3,9 @@ import { fetchData } from './module/addScore.js';
 import showModal from './module/showModal.js';
 import { fetchLikes, addLikes, updateLikes } from './module/addLikes.js';
 
-const menuItem = document.getElementById('menu-count');
-
 const menuList = document.querySelector('.lists');
+
+const menuItem = document.getElementById('menu-count');
 
 const displayLists = async () => {
   const menu = await fetchData();
@@ -30,7 +30,7 @@ const displayLists = async () => {
     if (index <= 18 && index > 9) {
       menuList.innerHTML += `
 
-        <li dataId='${data.idMeal} items'>
+        <li dataId='${data.idMeal}'>
 
         <img src="${data.strMealThumb}" alt="${data.strMeal}">
         <div class="name-con">
