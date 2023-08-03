@@ -229,6 +229,7 @@ footer {
   font-weight: 700;
   top: 1em;
   right: 1em;
+  cursor: pointer;
 }
 
 .menuName {
