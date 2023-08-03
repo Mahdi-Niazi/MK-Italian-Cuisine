@@ -40,6 +40,11 @@ img {
   gap: 1em;
 }
 
+.lists li:hover {
+  background-color: #fbebe3;
+  transform: translate(0, 0.3rem);
+}
+
 .nav-menu li:hover {
   color: #f4ce15;
 }
@@ -112,6 +117,7 @@ button {
 .buttondesc:hover,
 button:hover {
   background-color: white;
+  transform: translate(0, 0.3rem);
 }
 
 a.buttondesc {
@@ -183,6 +189,11 @@ footer {
   cursor: pointer;
 }
 
+.fa-heart:hover {
+  font-weight: 600;
+  font-size: 1.35em;
+}
+
 .modal {
   height: 100%;
   width: 100%;
@@ -195,6 +206,7 @@ footer {
   z-index: 10;
   overflow: auto;
   display: none;
+  transition: all 1s ease-out 0.5s;
 }
 
 .desc-con {
@@ -308,6 +320,7 @@ footer {
 
   .button {
     font-size: 100%;
+    margin-top: 0.5em;
   }
 
   .desc-con {
