@@ -27,7 +27,7 @@ const displayLists = async () => {
     if (index <= 18 && index > 9) {
       menuList.innerHTML += `
 
-        <li dataId='${data.idMeal}'>
+        <li dataId='${data.idMeal} items'>
 
         <img src="${data.strMealThumb}" alt="${data.strMeal}">
         <div class="name-con">
