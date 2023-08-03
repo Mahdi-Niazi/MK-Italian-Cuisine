@@ -1,5 +1,5 @@
 import './style.css';
-import { fetchData} from './module/addScore.js';
+import { fetchData } from './module/addScore.js';
 
 const menuList = document.querySelector('.lists');
 
