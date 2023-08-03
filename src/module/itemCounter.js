@@ -1,5 +1,5 @@
 const itemsCounter = () => {
-  const count = document.querySelectorAll('ul > li');
+  const count = document.querySelectorAll("ul > li");
   return count.length;
 };
 
