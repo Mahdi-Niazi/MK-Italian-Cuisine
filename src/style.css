@@ -63,21 +63,20 @@ header {
   font-family: 'Suez One', serif;
   display: flex;
   flex-direction: column;
-  font-size: 6em;
+  font-size: 1.5em;
 }
 
 .heading {
   position: absolute;
   z-index: 1;
-  top: 20%;
+  top: 40%;
   color: white;
-  right: 20%;
+  right: 10%;
 }
 
 .button {
-  font-size: 2em;
+  font-size: 50%;
   border-radius: 20px;
-  margin-top: 1.5em;
 }
 
 ul.nav-menu {
@@ -96,13 +95,13 @@ nav {
 
 .buttondesc,
 button {
-  padding: 0.25em 0.5em;
+  padding: 0.5em 0.75em;
   box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 4px 4px 2px 0 rgba(0, 0, 0, 0.75);
   font-family: 'Lato', sans-serif;
   font-weight: 700;
-  font-size: 1.25em;
+  font-size: 1em;
   border: none;
   background-color: #f4ce15;
   border-radius: 10px;
@@ -200,7 +199,7 @@ footer {
 
 .desc-con {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   column-gap: 4.5em;
   row-gap: 1em;
   margin-top: 1.5em;
@@ -227,8 +226,8 @@ footer {
   position: absolute;
   font-size: 2em;
   font-weight: 700;
-  top: 1em;
-  right: 1em;
+  top: 0.25em;
+  right: 0.35em;
   cursor: pointer;
 }
 
@@ -295,4 +294,28 @@ footer {
   border: none;
   margin-top: 1em;
   margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 49em) {
+  .heading {
+    top: 30%;
+    right: 20%;
+  }
+
+  .heading h1 {
+    font-size: 6em;
+  }
+
+  .button {
+    font-size: 100%;
+  }
+
+  .desc-con {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fa-xmark {
+    top: 1em;
+    right: 1em;
+  }
 }
