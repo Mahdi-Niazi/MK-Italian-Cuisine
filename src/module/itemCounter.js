@@ -3,5 +3,4 @@ const itemsCounter = () => {
   return count.length;
 };
 
-itemsCounter();
 export default itemsCounter;
