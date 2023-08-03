@@ -1,4 +1,4 @@
-const appId = "hEgDPv2bsJBfvDJZuzrn";
+const appId = 'hEgDPv2bsJBfvDJZuzrn';
 const apiUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/`;
 
 const fetchLikes = async () => {

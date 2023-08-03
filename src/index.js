@@ -44,7 +44,6 @@ const displayLists = async () => {
     </li>`;
     }
 
-
     const addCommentBtns = document.querySelectorAll('.addComment');
     addCommentBtns.forEach((button) => {
       button.addEventListener('click', (event) => {
