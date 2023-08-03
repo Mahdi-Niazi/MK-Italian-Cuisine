@@ -1,6 +1,5 @@
 import './style.css';
 import { fetchData } from './module/addScore.js';
-import showModal from './module/showModal.js';
 import { fetchLikes } from './module/addLikes.js';
 
 const menuList = document.querySelector('.lists');
@@ -43,22 +42,7 @@ const displayLists = async () => {
         </div>
     </li>`;
     }
-
-    const addCommentBtns = document.querySelectorAll('.addComment');
-    addCommentBtns.forEach((button) => {
-      button.addEventListener('click', (event) => {
-        const listItem = event.target.closest('li');
-        const dataId = listItem.getAttribute('dataId');
-        showModal(dataId);
-      });
-    });
   });
 };
 
 displayLists();
-
-const closeBtn = document.querySelector('.fa-xmark');
-const modal = document.querySelector('.modal');
-closeBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
