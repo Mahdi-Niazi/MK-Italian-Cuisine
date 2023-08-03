@@ -16,28 +16,6 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _module_addScore_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module/addScore.js */ \"./src/module/addScore.js\");\n/* harmony import */ var _module_addLikes_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./module/addLikes.js */ \"./src/module/addLikes.js\");\n\n\n\nconst menuList = document.querySelector('.lists');\nconst displayLists = async () => {\n  const menu = await (0,_module_addScore_js__WEBPACK_IMPORTED_MODULE_1__.fetchData)();\n  const likes = await (0,_module_addLikes_js__WEBPACK_IMPORTED_MODULE_2__.fetchLikes)();\n  menuList.innerHTML = '';\n  const combined = [];\n  for (let i = 0; i < menu.length; i += 1) {\n    const meal = menu[i];\n    const likeObj = likes.find(like => like.item_id === meal.idMeal);\n    combined.push({\n      strMealThumb: meal.strMealThumb,\n      strMeal: meal.strMeal,\n      idMeal: meal.idMeal,\n      likes: likeObj ? likeObj.likes : 0\n    });\n  }\n  combined.forEach((data, index) => {\n    if (index <= 18 && index > 9) {\n      menuList.innerHTML += `\n\n        <li dataId='${data.idMeal}'>\n\n        <img src=\"${data.strMealThumb}\" alt=\"${data.strMeal}\">\n        <div class=\"name-con\">\n            <span class=\"menu-name\">${data.strMeal}</span>\n            <div class=\"like-con\">\n              <i class=\"fa-regular fa-heart\"></i>\n              <span class=\"likes\">${data.likes} likes</span>\n            </div>\n        </div>\n        <div class=\"button-con\">\n        <button type=\"button\" class=\"addComment\">Comment</button>\n        <button type=\"button\" class=\"addReservation\">Reservation</button>\n        </div>\n    </li>`;\n    }\n  });\n};\ndisplayLists();\n\n//# sourceURL=webpack://group-capstone/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/module/addLikes.js":
-/*!********************************!*\
-  !*** ./src/module/addLikes.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   apiUrl: () => (/* binding */ apiUrl),\n/* harmony export */   appId: () => (/* binding */ appId),\n/* harmony export */   fetchLikes: () => (/* binding */ fetchLikes)\n/* harmony export */ });\nconst appId = 'hEgDPv2bsJBfvDJZuzrn';\nconst apiUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/`;\nconst fetchLikes = async () => {\n  const response = await fetch(`${apiUrl}likes/`);\n  const data = await response.text();\n  const parsedata = JSON.parse(data);\n  return parsedata;\n};\n\n\n//# sourceURL=webpack://group-capstone/./src/module/addLikes.js?");
-
-/***/ }),
-
-/***/ "./src/module/addScore.js":
-/*!********************************!*\
-  !*** ./src/module/addScore.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   fetchData: () => (/* binding */ fetchData),\n/* harmony export */   fetchDataId: () => (/* binding */ fetchDataId)\n/* harmony export */ });\nconst apiUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=italian';\nconst apiwithID = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';\nconst fetchData = async () => {\n  const response = await fetch(apiUrl);\n  const data = await response.json();\n  return data.meals;\n};\nconst fetchDataId = async dataId => {\n  const response = await fetch(`${apiwithID}${dataId}`);\n  const data = await response.json();\n  return data.meals;\n};\n\n\n//# sourceURL=webpack://group-capstone/./src/module/addScore.js?");
-
 /***/ }),
 
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/style.css":
