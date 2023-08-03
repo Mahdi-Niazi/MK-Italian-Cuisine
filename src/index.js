@@ -1,12 +1,28 @@
 import './style.css';
 import { fetchData } from './module/addScore.js';
+import { fetchLikes } from './module/addLikes.js';
 
 const menuList = document.querySelector('.lists');
 
 const displayLists = async () => {
   const menu = await fetchData();
+  const likes = await fetchLikes();
   menuList.innerHTML = '';
-  menu.forEach((data, index) => {
+
+  const combined = [];
+  for (let i = 0; i < menu.length; i += 1) {
+    const meal = menu[i];
+    const likeObj = likes.find((like) => like.item_id === meal.idMeal);
+
+    combined.push({
+      strMealThumb: meal.strMealThumb,
+      strMeal: meal.strMeal,
+      idMeal: meal.idMeal,
+      likes: likeObj ? likeObj.likes : 0,
+    });
+  }
+
+  combined.forEach((data, index) => {
     if (index <= 18 && index > 9) {
       menuList.innerHTML += `
 
@@ -17,7 +33,7 @@ const displayLists = async () => {
             <span class="menu-name">${data.strMeal}</span>
             <div class="like-con">
               <i class="fa-regular fa-heart"></i>
-              <span class="likes">5 likes</span>
+              <span class="likes">${data.likes} likes</span>
             </div>
         </div>
         <div class="button-con">
