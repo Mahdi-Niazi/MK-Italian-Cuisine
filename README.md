@@ -68,6 +68,7 @@
 
 
  [Live Demo Link](https://mahdi-niazi.github.io/Group-Capstone/dist/index.html)
+ [Video Demo Link](https://drive.google.com/file/d/1yU0giHHoXcMsRm0xPA8gSonHlyPcLR1N/view?usp=sharing)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
