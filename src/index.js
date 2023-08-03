@@ -2,6 +2,7 @@ import "./style.css";
 import { fetchData } from "./module/addScore.js";
 import showModal from "./module/showModal.js";
 import { fetchLikes, addLikes, updateLikes } from "./module/addLikes.js";
+import mealCounter from "./module/mealcounter.js";
 
 const menuList = document.querySelector(".lists");
 
@@ -10,7 +11,7 @@ const menuItem = document.getElementById("menu-count");
 const displayLists = async () => {
   const menu = await fetchData();
   const likes = await fetchLikes();
-  menuItem.textContent = ` (${menu.length})`;
+
   menuList.innerHTML = "";
 
   const combined = [];
@@ -45,7 +46,7 @@ const displayLists = async () => {
         </div>
     </li>`;
     }
-
+    menuItem.textContent = `(${mealCounter()})`;
     const heartIcons = document.querySelectorAll(".fa-heart");
 
     heartIcons.forEach((heartIcon) => {
