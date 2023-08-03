@@ -16,18 +16,6 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _module_addScore_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module/addScore.js */ \"./src/module/addScore.js\");\n\n\nconst menuList = document.querySelector('.lists');\nconst displayLists = async () => {\n  const menu = await (0,_module_addScore_js__WEBPACK_IMPORTED_MODULE_1__.fetchData)();\n  menuList.innerHTML = '';\n  menu.forEach((data, index) => {\n    if (index <= 18 && index > 9) {\n      menuList.innerHTML += `\n\n        <li dataId='${data.idMeal}'>\n\n        <img src=\"${data.strMealThumb}\" alt=\"${data.strMeal}\">\n        <div class=\"name-con\">\n            <span class=\"menu-name\">${data.strMeal}</span>\n            <div class=\"like-con\">\n              <i class=\"fa-regular fa-heart\"></i>\n              <span class=\"likes\">5 likes</span>\n            </div>\n        </div>\n        <div class=\"button-con\">\n        <button type=\"button\" class=\"addComment\">Comment</button>\n        <button type=\"button\" class=\"addReservation\">Reservation</button>\n        </div>\n    </li>`;\n    }\n  });\n};\ndisplayLists();\n\n//# sourceURL=webpack://group-capstone/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/module/addScore.js":
-/*!********************************!*\
-  !*** ./src/module/addScore.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   fetchData: () => (/* binding */ fetchData),\n/* harmony export */   fetchDataId: () => (/* binding */ fetchDataId)\n/* harmony export */ });\nconst apiUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=italian';\nconst apiwithID = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';\nconst fetchData = async () => {\n  const response = await fetch(apiUrl);\n  const data = await response.json();\n  return data.meals;\n};\nconst fetchDataId = async dataId => {\n  const response = await fetch(`${apiwithID}${dataId}`);\n  const data = await response.json();\n  return data.meals;\n};\n\n\n//# sourceURL=webpack://group-capstone/./src/module/addScore.js?");
-
 /***/ }),
 
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/style.css":
