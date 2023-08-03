@@ -1,6 +1,8 @@
 import './style.css';
 import { fetchData } from './module/addScore.js';
-import { fetchLikes } from './module/addLikes.js';
+import showModal from './module/showModal.js';
+import { fetchLikes, addLikes, updateLikes } from './module/addLikes.js';
+import './module/itemCounter.js';
 
 const menuList = document.querySelector('.lists');
 
@@ -26,7 +28,7 @@ const displayLists = async () => {
     if (index <= 18 && index > 9) {
       menuList.innerHTML += `
 
-        <li dataId='${data.idMeal}'>
+        <li dataId='${data.idMeal} items'>
 
         <img src="${data.strMealThumb}" alt="${data.strMeal}">
         <div class="name-con">
@@ -42,7 +44,39 @@ const displayLists = async () => {
         </div>
     </li>`;
     }
+
+    const heartIcons = document.querySelectorAll('.fa-heart');
+
+    heartIcons.forEach((heartIcon) => {
+      heartIcon.addEventListener('click', async (event) => {
+        heartIcon.classList.replace('fa-regular', 'fa-solid');
+        const listItem = event.target.closest('li');
+        const dataId = listItem.getAttribute('dataId');
+        const likes = await updateLikes(dataId);
+        const like = {
+          likes: likes + 1,
+          item_id: dataId,
+        };
+        addLikes(like);
+        displayLists();
+      });
+    });
+
+    const addCommentBtns = document.querySelectorAll('.addComment');
+    addCommentBtns.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        const listItem = event.target.closest('li');
+        const dataId = listItem.getAttribute('dataId');
+        showModal(dataId);
+      });
+    });
   });
 };
 
 displayLists();
+
+const closeBtn = document.querySelector('.fa-xmark');
+const modal = document.querySelector('.modal');
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
