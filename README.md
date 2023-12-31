@@ -67,7 +67,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
- [Live Demo Link](https://mahdi-niazi.github.io/Group-Capstone/dist/index.html) <br/>
+ [Live Demo Link](https://italian-food.onrender.com/) <br/>
  [Video Demo Link](https://drive.google.com/file/d/1yU0giHHoXcMsRm0xPA8gSonHlyPcLR1N/view?usp=sharing)
 
 
